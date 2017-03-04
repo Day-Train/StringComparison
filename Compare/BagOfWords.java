@@ -4,13 +4,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class BagOfWords {
+class BagOfWords {
 	
 	private String stringA;
 	private String stringB;
-	
-	public BagOfWords(){
-	}
 	
 	public BagOfWords(String stringA, String stringB){
 		this.stringA = stringA;
@@ -98,7 +95,7 @@ public class BagOfWords {
 		double normalizedDotProduct = 0;
 		normalizedDotProduct = arraySumSquareRoot / productOfMagnitudes;
 		
-		result = 1 - normalizedDotProduct / Math.pow(2, 0.5); //Need to debug constant here, getting answers possibly off
+		result = 1 - normalizedDotProduct / Math.pow(2, 0.5); //TODO debug constant
 		return result;
 	}
 
