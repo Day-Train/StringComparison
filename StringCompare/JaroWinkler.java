@@ -1,14 +1,11 @@
 package StringCompare;
 
-public class JaroWinkler {
+class JaroWinkler {
 	
 	private String stringA;
 	private String stringB;
 	private double lengthPrefix;
 	private double scalingFactor;
-	
-	public JaroWinkler() {	
-	}
 	
 	// Constructor that accepts string inputs
     public JaroWinkler(String stringA, String stringB){
@@ -22,30 +19,6 @@ public class JaroWinkler {
         this.stringB = stringB;
         this.lengthPrefix = lPrefix;
         this.scalingFactor = sFactor;
-    }
-    
-    public double getLengthPrefix() {
-        return lengthPrefix;
-    }
-    
-    public double getScalingFactor() {
-        return scalingFactor;
-    }
-	
-    public void setStringA(String stringA) {
-        this.stringA = stringA;
-    }
-    
-    public void setStringB(String stringB) {
-        this.stringB = stringB;
-    }
-    
-    public void setLengthPrefix(double lengthPrefix) {
-        this.lengthPrefix = lengthPrefix;
-    }
-    
-    public void setScalingFactor(double scalingFactor) {
-        this.scalingFactor = scalingFactor;
     }
 	
     public double getJaroDistance() {
@@ -108,7 +81,6 @@ public class JaroWinkler {
     		int y = 1;
     		String compareSubStringB = stringB.substring(Math.max(0, k - (Math.max(stringA.length(), stringB.length()) / 2)-1),
     				Math.min(k + (Math.max(stringA.length(), stringB.length()) / 2)-1, stringB.length()));
-    		//System.out.println("The " + k + "th compareSubString from String B is: " + compareSubStringB);
     		if (compareSubStringB.contains(arrayA[k].toString())) {
     			matchChar += x;
     			if (!(arrayA[k].toString().equalsIgnoreCase(arrayB[k].toString()))) {
