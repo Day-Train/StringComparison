@@ -1,4 +1,4 @@
-package StringCompare;
+package Compare;
 
 public class NGram {
 	
