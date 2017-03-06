@@ -5,16 +5,25 @@ class NGram {
 	private int gramSize = 2;
 	private String stringA;
 	private String stringB;
-	
-	public NGram(String stringA, String stringB){
-        this.stringA = stringA;
-        this.stringB = stringB;
+
+	public void setGramSize(int gramSize) {
+		this.gramSize = gramSize;
+	}
+
+	public void setStringA(String stringA) {
+		this.stringA = stringA;
+	}
+
+	public void setStringB(String stringB) {
+		this.stringB = stringB;
 	}
 	
-    public NGram(String stringA, String stringB, int gSize){
-        this.stringA = stringA;
-        this.stringB = stringB;
-        this.gramSize = gSize;
+	private NGram() {};
+
+	public static NGram INSTANCE = new NGram();
+
+	public static NGram getInstance() {
+	    return INSTANCE;
     }
 	
 	public double getNGramDistance() {

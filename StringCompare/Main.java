@@ -12,7 +12,6 @@ public class Main {
 		String stringB = "";
 		double lengthPrefix = 0;
 		double scalingFactor = 0;
-		int gramSize = 2;
 		
 		BufferedReader dataIn = new BufferedReader(new
                 InputStreamReader( System.in) );
@@ -33,14 +32,6 @@ public class Main {
             System.out.println("Error!");
         }
         
-        // Prompt a user to enter the NGram size
-        System.out.println("Please enter the gram size you'd like to use for NGram comparison (must be integer value):");
-        try{
-            gramSize = Integer.parseInt(dataIn.readLine());
-        }catch( IOException e ){
-            System.out.println("Error!");
-        }
-        
         // Prompt a user to enter the Jaro-Winkler lengthPrefix size
         System.out.println("Please enter the prefix length you'd like to use for Jaro-Winkler comparison (must be integer value between 0 and 4 inclusive):");
         try{
@@ -57,20 +48,26 @@ public class Main {
             System.out.println("Error!");
         }
         
-		JaroWinkler inputStrings1 = new JaroWinkler(stringA,stringB,lengthPrefix,scalingFactor);
-		NGram inputStrings2 = new NGram(stringA,stringB,gramSize);
-		BagOfWords inputStrings3 = new BagOfWords(stringA,stringB);
-        
-        
-		//JaroWinkler inputStrings1 = new JaroWinkler("James","Jamie",2,.125);
-		System.out.println("The evaluated Jaro distance between the two strings is: " + inputStrings1.getJaroDistance());
-		System.out.println("The evaluated Jaro-Winkler distance between the two strings is: " + inputStrings1.getJaroWinklerDistance());
-		
-		//NGram inputStrings2 = new NGram("James","Jamie",2);
-		System.out.println("The evaluated NGram similarity between the two strings is: " + inputStrings2.getNGramDistance());
-		
-		//BagOfWords inputStrings3 = new BagOfWords("James","Jamie");
-		System.out.println("The evaluated Bag of Words similarity between the two strings is: " + inputStrings3.getBagOfWordsDistance());
+		JaroWinkler jaroCompare = JaroWinkler.getInstance();
+        jaroCompare.setStringA(stringA);
+        jaroCompare.setStringB(stringB);
+        jaroCompare.setLengthPrefix(lengthPrefix);
+        jaroCompare.setScalingFactor(scalingFactor);
+
+        BagOfWords bagCompare = BagOfWords.getINSTANCE();
+        bagCompare.setStringA(stringA);
+        bagCompare.setStringB(stringB);
+
+        NGram nGramCompare = NGram.getInstance();
+        nGramCompare.setStringA(stringA);
+        nGramCompare.setStringB(stringB);
+
+		//JaroWinkler jaroCompare = new JaroWinkler("James","Jamie",2,.125);
+		System.out.println("The evaluated Jaro distance between the two strings is: " + jaroCompare.getJaroDistance());
+		System.out.println("The evaluated Jaro-Winkler distance between the two strings is: " + jaroCompare.getJaroWinklerDistance());
+		System.out.println("The evaluated Bag of Words distance between the two strings is: " + bagCompare.getBagOfWordsDistance());
+		System.out.println("The evaluated NGram distance between the two strings is: " + nGramCompare.getNGramDistance());
+
 	}
 
 }
