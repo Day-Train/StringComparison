@@ -8,7 +8,7 @@ public final class BagOfWords {
 
 	private BagOfWords() {};
 
-	public static BagOfWords INSTANCE = new BagOfWords();
+	private static BagOfWords INSTANCE = new BagOfWords();
 
 	public static BagOfWords getINSTANCE() { return INSTANCE; }
 	

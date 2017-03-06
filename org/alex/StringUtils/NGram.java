@@ -4,7 +4,7 @@ public final class NGram {
 
 	private NGram() {};
 
-	public static NGram INSTANCE = new NGram();
+	private static NGram INSTANCE = new NGram();
 
 	public static NGram getInstance() {
 	    return INSTANCE;
