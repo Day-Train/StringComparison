@@ -1,25 +1,35 @@
 package Compare;
 
 class JaroWinkler {
-	
+
 	private String stringA;
 	private String stringB;
 	private double lengthPrefix;
 	private double scalingFactor;
+
+	public void setStringA(String stringA) {
+		this.stringA = stringA;
+	}
+
+	public void setStringB(String stringB) {
+		this.stringB = stringB;
+	}
+
+	public void setLengthPrefix(double lengthPrefix) {
+		this.lengthPrefix = lengthPrefix;
+	}
+
+	public void setScalingFactor(double scalingFactor) {
+		this.scalingFactor = scalingFactor;
+	}
 	
-	// Constructor that accepts string inputs
-    public JaroWinkler(String stringA, String stringB){
-        this.stringA = stringA;
-        this.stringB = stringB;
-    }
-	
-	// Constructor that gets length prefix and scaling factor parameters as well
-    public JaroWinkler(String stringA, String stringB, double lPrefix, double sFactor){
-        this.stringA = stringA;
-        this.stringB = stringB;
-        this.lengthPrefix = lPrefix;
-        this.scalingFactor = sFactor;
-    }
+	private JaroWinkler() {}
+
+	public static JaroWinkler INSTANCE = new JaroWinkler();
+
+	public static JaroWinkler getInstance() {
+		return INSTANCE;
+	}
 	
     public double getJaroDistance() {
     	

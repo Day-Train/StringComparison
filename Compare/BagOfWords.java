@@ -5,14 +5,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 class BagOfWords {
-	
+
 	private String stringA;
 	private String stringB;
-	
-	public BagOfWords(String stringA, String stringB){
+
+	public void setStringA(String stringA) {
 		this.stringA = stringA;
+	}
+
+	public void setStringB(String stringB) {
 		this.stringB = stringB;
 	}
+
+	private BagOfWords() {};
+
+	public static BagOfWords INSTANCE = new BagOfWords();
+
+	public static BagOfWords getINSTANCE() { return INSTANCE; }
 	
 	public double getBagOfWordsDistance() {
 		
