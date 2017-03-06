@@ -1,21 +1,10 @@
-package Compare;
+package org.alex.StringUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-class BagOfWords {
-
-	private String stringA;
-	private String stringB;
-
-	public void setStringA(String stringA) {
-		this.stringA = stringA;
-	}
-
-	public void setStringB(String stringB) {
-		this.stringB = stringB;
-	}
+public final class BagOfWords {
 
 	private BagOfWords() {};
 
@@ -23,7 +12,7 @@ class BagOfWords {
 
 	public static BagOfWords getINSTANCE() { return INSTANCE; }
 	
-	public double getBagOfWordsDistance() {
+	public static double getBagOfWordsDistance(String stringA, String stringB) {
 		
 		double result = 0;
 		String[] arrayA = stringA.split(" ");

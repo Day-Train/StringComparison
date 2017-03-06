@@ -1,23 +1,7 @@
-package Compare;
+package org.alex.StringUtils;
 
-class NGram {
-	
-	private int gramSize = 2;
-	private String stringA;
-	private String stringB;
+public final class NGram {
 
-	public void setGramSize(int gramSize) {
-		this.gramSize = gramSize;
-	}
-
-	public void setStringA(String stringA) {
-		this.stringA = stringA;
-	}
-
-	public void setStringB(String stringB) {
-		this.stringB = stringB;
-	}
-	
 	private NGram() {};
 
 	public static NGram INSTANCE = new NGram();
@@ -26,7 +10,7 @@ class NGram {
 	    return INSTANCE;
     }
 	
-	public double getNGramDistance() {
+	public static double getNGramDistance(String stringA, String stringB, int gramSize) {
 		
 		double result = 0;
 		String[] arrayA = new String[stringA.length() - gramSize + 1];

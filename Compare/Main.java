@@ -1,5 +1,7 @@
 package Compare;
 
+import org.alex.StringUtils.*;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,11 +12,10 @@ public class Main {
 		
 		String stringA = "";
 		String stringB = "";
-		double lengthPrefix = 0;
+		int lengthPrefix = 0;
 		double scalingFactor = 0;
 		
-		BufferedReader dataIn = new BufferedReader(new
-                InputStreamReader( System.in) );
+		BufferedReader dataIn = new BufferedReader(new InputStreamReader( System.in) );
        
         // Prompt a user to enter the first string
         System.out.println("Please enter the first string you'd like to compare:");
@@ -47,26 +48,10 @@ public class Main {
         }catch( IOException e ){
             System.out.println("Error!");
         }
-        
-		JaroWinkler jaroCompare = JaroWinkler.getInstance();
-        jaroCompare.setStringA(stringA);
-        jaroCompare.setStringB(stringB);
-        jaroCompare.setLengthPrefix(lengthPrefix);
-        jaroCompare.setScalingFactor(scalingFactor);
 
-        BagOfWords bagCompare = BagOfWords.getINSTANCE();
-        bagCompare.setStringA(stringA);
-        bagCompare.setStringB(stringB);
-
-        NGram nGramCompare = NGram.getInstance();
-        nGramCompare.setStringA(stringA);
-        nGramCompare.setStringB(stringB);
-
-		//JaroWinkler jaroCompare = new JaroWinkler("James","Jamie",2,.125);
-		System.out.println("The evaluated Jaro distance between the two strings is: " + jaroCompare.getJaroDistance());
-		System.out.println("The evaluated Jaro-Winkler distance between the two strings is: " + jaroCompare.getJaroWinklerDistance());
-		System.out.println("The evaluated Bag of Words distance between the two strings is: " + bagCompare.getBagOfWordsDistance());
-		System.out.println("The evaluated NGram distance between the two strings is: " + nGramCompare.getNGramDistance());
+		System.out.println("The evaluated Jaro Winkler distance between the two strings is: " + JaroWinkler.getJaroWinklerDistance(stringA, stringB, lengthPrefix, scalingFactor));
+		System.out.println("The evaluated Bag of Words distance between the two strings is: " + BagOfWords.getBagOfWordsDistance(stringA, stringB));
+		System.out.println("The evaluated NGram distance between the two strings is: " + NGram.getNGramDistance(stringA, stringB, 2));
 
 	}
 
