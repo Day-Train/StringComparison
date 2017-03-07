@@ -2,7 +2,7 @@ package org.alex.StringUtils;
 
 public final class NGram {
 
-	private NGram() {};
+	private NGram() {}
 
 	private static NGram INSTANCE = new NGram();
 
@@ -11,9 +11,9 @@ public final class NGram {
     }
 
 	/**
-	 * Find the nGram distance between two strings.
-	 * @param stringA a string to compare.
-	 * @param stringB a string to compare.
+	 * Find the nGram distance between two Strings.
+	 * @param stringA a String to compare.
+	 * @param stringB a String to compare.
 	 * @param gramSize a integer which expresses the number of contiguous characters to evaluate for matching
 	 *                 purposes.
 	 * @return the nGram distance between two stringA and stringB normalized between 0 and 1.

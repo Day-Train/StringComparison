@@ -6,7 +6,7 @@ import java.util.Set;
 
 public final class BagOfWords {
 
-	private BagOfWords() {};
+	private BagOfWords() {}
 
 	private static BagOfWords INSTANCE = new BagOfWords();
 
@@ -15,9 +15,9 @@ public final class BagOfWords {
 	}
 
 	/**
-	 * Find the Bag of Words distance between two strings.
-	 * @param stringA a string of words; requires words be space delimited.
-	 * @param stringB a string of words; requires words be space delimited.
+	 * Find the Bag of Words distance between two Strings.
+	 * @param stringA a String of words; requires words be space delimited.
+	 * @param stringB a String of words; requires words be space delimited.
 	 * @return the Bag of Words distance between two stringA and stringB normalized between 0 and 1.
 	 */
 	public static double getBagOfWordsDistance(String stringA, String stringB) {

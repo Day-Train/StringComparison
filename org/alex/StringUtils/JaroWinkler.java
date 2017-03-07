@@ -11,9 +11,9 @@ public final class JaroWinkler {
 	}
 
 	/**
-	 * Fin the Jaro distance between two strings.
-	 * @param stringA a string to compare.
-	 * @param stringB a string to compare.
+	 * Fin the Jaro distance between two Strings.
+	 * @param stringA a String to compare.
+	 * @param stringB a String to compare.
 	 * @return the Jaro distance between stringA and stringB normalized between 0 and 1.
 	 */
     public static double getJaroDistance(String stringA, String stringB) {
