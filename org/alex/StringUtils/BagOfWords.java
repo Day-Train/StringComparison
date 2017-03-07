@@ -16,8 +16,8 @@ public final class BagOfWords {
 
 	/**
 	 * Find the Bag of Words distance between two Strings.
-	 * @param stringA a String of words; requires words be space delimited.
-	 * @param stringB a String of words; requires words be space delimited.
+	 * @param stringA a String of words; requires words be space separated.
+	 * @param stringB a String of words; requires words be space separated.
 	 * @return the Bag of Words distance between two stringA and stringB normalized between 0 and 1.
 	 */
 	public static double getBagOfWordsDistance(String stringA, String stringB) {
