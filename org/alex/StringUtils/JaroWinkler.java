@@ -9,12 +9,29 @@ public final class JaroWinkler {
 	public static JaroWinkler getInstance() {
 		return INSTANCE;
 	}
-	
+
+	/**
+	 * Fin the Jaro distance between two strings.
+	 * @param stringA a string to compare.
+	 * @param stringB a string to compare.
+	 * @return the Jaro distance between stringA and stringB normalized between 0 and 1.
+	 */
     public static double getJaroDistance(String stringA, String stringB) {
     	return getJaroWinklerDistance(stringA, stringB, 0, 0);
 	}
-    
-    public static double getJaroWinklerDistance(String stringA, String stringB, int lengthPrefix, double scalingFactor) {
+
+	/**
+	 * Find the Jaro-Winkler distance between two Strings.
+	 * @param stringA a String to compare.
+	 * @param stringB a String to compare.
+	 * @param lengthPrefix the Jaro-Winkler prefix scale which gives more favorable ratings to strings which match
+	 *                     from from the beginning to a fixed number of characters; requires lengthPrefix be between
+	 *                     0 and 4 inclusive.
+	 * @param scalingFactor a constant scaling factor for how heavily matching prefix characters should weigh in the
+	 *                      ratings; requires scalingFactor be between 0 and 0.25 inclusive.
+	 * @return the Jaro-Winkler distance between stringA and stringB normalized between 0 and 1.
+	 */
+        public static double getJaroWinklerDistance(String stringA, String stringB, int lengthPrefix, double scalingFactor) {
     	
     	double jaroDistance = 0;
     	double result = 0;

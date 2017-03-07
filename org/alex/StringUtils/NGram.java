@@ -9,7 +9,15 @@ public final class NGram {
 	public static NGram getInstance() {
 	    return INSTANCE;
     }
-	
+
+	/**
+	 * Find the nGram distance between two strings.
+	 * @param stringA a string to compare.
+	 * @param stringB a string to compare.
+	 * @param gramSize a integer which expresses the number of contiguous characters to evaluate for matching
+	 *                 purposes.
+	 * @return the nGram distance between two stringA and stringB normalized between 0 and 1.
+	 */
 	public static double getNGramDistance(String stringA, String stringB, int gramSize) {
 		
 		double result = 0;

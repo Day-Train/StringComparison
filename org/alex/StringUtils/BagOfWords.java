@@ -10,8 +10,16 @@ public final class BagOfWords {
 
 	private static BagOfWords INSTANCE = new BagOfWords();
 
-	public static BagOfWords getINSTANCE() { return INSTANCE; }
-	
+	public static BagOfWords getINSTANCE() {
+		return INSTANCE;
+	}
+
+	/**
+	 * Find the Bag of Words distance between two strings.
+	 * @param stringA a string of words; requires words be space delimited.
+	 * @param stringB a string of words; requires words be space delimited.
+	 * @return the Bag of Words distance between two stringA and stringB normalized between 0 and 1.
+	 */
 	public static double getBagOfWordsDistance(String stringA, String stringB) {
 		
 		double result = 0;
