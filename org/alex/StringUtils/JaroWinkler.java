@@ -24,8 +24,8 @@ public final class JaroWinkler {
 	 * Find the Jaro-Winkler distance between two Strings.
 	 * @param stringA a String to compare.
 	 * @param stringB a String to compare.
-	 * @param lengthPrefix the Jaro-Winkler prefix scale which gives more favorable ratings to strings which match
-	 *                     from from the beginning to a fixed number of characters; requires lengthPrefix be between
+	 * @param lengthPrefix the Jaro-Winkler prefix scale which more favorably rates strings which match from
+	 *                     the beginning to a fixed number of characters; requires lengthPrefix be between
 	 *                     0 and 4 inclusive.
 	 * @param scalingFactor a constant scaling factor for how heavily matching prefix characters should weigh in the
 	 *                      ratings; requires scalingFactor be between 0 and 0.25 inclusive.
